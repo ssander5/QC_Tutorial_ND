@@ -44,23 +44,18 @@ else
    READY=0
 fi
 
-if [ $READY == 0 ]; then
-    echo "Software is still missing, please address this before running workflow"
-    echo ""
-else
-    echo "Software is all found, you can run the workflow now"
-    echo ""
-fi
-
-
+echo "DONE Checking software"
 
 ###########################################################
+
+echo "Checking for databases"
 
 echo "Checking for adaptors file for trimming"
 if [ -f ../Reference/adaptors.fa ]; then
     echo ".....Adaptor files exist"
 else
     echo ".....Please create an adaptors.fa file in the Reference directory for trimming"
+    READY=0
 fi
 
 echo "Checking for spike in file for trimming"
@@ -127,4 +122,10 @@ echo "Downloading and indexing genome"
 
 echo "DONE downloading and indexing genome!"
 
-echo "DONE Checking software"
+if [ $READY == 0 ]; then
+    echo "Software or Databases are still missing, please address this before running workflow"
+    echo ""
+else
+    echo "Software and Databases are all found, you can run the workflow now"
+    echo ""
+fi
