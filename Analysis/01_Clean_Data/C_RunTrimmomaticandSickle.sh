@@ -31,7 +31,7 @@ for g in ../../Input_data/*_R1*; do    #######IF YOUR READS ARE *R1*, please cha
     -threads 16 \
     -trimlog ./trimmomatic/$base.trimlog.txt \
     ./trimmomatic/$base.1.trimclean.fq \
-    ILLUMINACLIP:../Reference/adapters.fa:1:50:30 \
+    ILLUMINACLIP:../Reference/adaptors.fa:1:50:30 \
     LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:60
 
     #sickle se
