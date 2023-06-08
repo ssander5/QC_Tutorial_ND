@@ -1,3 +1,10 @@
+#!/bin/bash
+
+#$ -M sheri.anne.sanders@gmail.com
+#$ -m abe
+#$ -q debug
+#$ -N RunQC_A
+
 echo "Checking for software used in this step"
 
 echo "Checking for FastQC"

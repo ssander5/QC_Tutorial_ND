@@ -3,7 +3,7 @@
 #$ -M sheri.anne.sanders@gmail.com
 #$ -m abe
 #$ -q debug
-#$ -N RunQC_F
+#$ -N RunQC_G
 
 echo "Creating stats"
 

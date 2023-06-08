@@ -3,7 +3,7 @@
 #$ -M sheri.anne.sanders@gmail.com
 #$ -m abe
 #$ -q debug
-#$ -N RunQC_G
+#$ -N RunQC_H
 
 #make output folder
 
