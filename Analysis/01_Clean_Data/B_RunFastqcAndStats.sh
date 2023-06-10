@@ -28,7 +28,7 @@ fi
 
 for g in ../../Input_data/*fastq; do
     o=${g#../../Input_data/}
-    reformat.sh threads=16 in=$g > ./bbmap/${o%_1*}.stats.txt
+    reformat.sh threads=16 in=$g out=stout.fq 2>&1 >/dev/nul | awk '{print "RAW READS "$0}' | tee -a ./bbmap/${o%_1*}.stats.txt
 done
 
 echo "DONE Running FastQC and Generating Stats!"
