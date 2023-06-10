@@ -26,7 +26,8 @@ for f in ./sickle/*.trimclean.sickleclean.fq ; do
     k=31 \
     ref=../Reference/phix_adapters.fa.gz \
     out1=./bbmap/${name%trim*}trimclean.sickleclean.spikeclean.fq \
-    minlength=60
+    minlength=60 \
+    2>&1 > /dev/null | awk '{print "PHIX REMOVAL UNPAIRED "$0}' | tee -a ./bbmap/${name%trim*}stats.txt
 
 done
 
