@@ -33,7 +33,7 @@ for f in ./bbmap/*trimclean.sickleclean.spikeclean.hostclean.fq; do
     in=${base}trimclean.sickleclean.spikeclean.hostclean.fq \
     ref=../Reference/smr_v4.3_default_db.fasta \
     out=${base}final.clean.fq \
-    outm=${base}reads_that_match_rRNA.fq | \
+    outm=${base}reads_that_match_rRNA.fq 2>&1 > /dev/null | \
     awk '{print "HOST CONTAMINATION SEQUENCES PAIRED "$0}' | \
     tee -a ./bbmap/$(basename ${base}stats.txt)
 
