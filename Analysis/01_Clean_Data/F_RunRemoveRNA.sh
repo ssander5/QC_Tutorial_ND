@@ -34,7 +34,7 @@ for f in ./bbmap/*trimclean.sickleclean.spikeclean.hostclean.fq; do
     ref=../Reference/smr_v4.3_default_db.fasta \
     out=${base}final.clean.fq \
     outm=${base}reads_that_match_rRNA.fq 2>&1 > /dev/null | \
-    awk '{print "rRNA CONTAMINATION SEQUENCES PAIRED "$0}' | \
+    awk '{print "rRNA CONTAMINATION SEQUENCES UNPAIRED "$0}' | \
     tee -a ./bbmap/$(basename ${base}stats.txt)
 
 done
